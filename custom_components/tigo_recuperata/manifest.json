@@ -1,6 +1,7 @@
 {
   "domain": "tigo_recuperata",
   "name": "Tigo Energia Recuperata",
+  "categories": ["energy.solar_batteries"],
   "codeowners": ["@nebbiadigiorno"],
   "config_flow": true,
   "dependencies": [],
