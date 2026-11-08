@@ -1,0 +1,56 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tigo account",
+        "description": "Credentials of the Tigo account (the same used on ei.tigoenergy.com). Only today's reclaimed energy is read.",
+        "data": {
+          "username": "Email or username",
+          "password": "Password"
+        }
+      },
+      "system": {
+        "title": "Choose the system",
+        "data": {
+          "system_id": "System"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Tigo login expired",
+        "data": {
+          "username": "Email or username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Wrong email/username or password.",
+      "cannot_connect": "Cannot reach the Tigo cloud. Check the Home Assistant log.",
+      "no_systems": "No system found on this account."
+    },
+    "abort": {
+      "already_configured": "This system is already configured.",
+      "endpoint_unauthorized": "Login works, but Tigo refuses the reclaimed-energy data for this account.",
+      "cannot_read": "Login works, but the reclaimed-energy data could not be read. Check the Home Assistant log.",
+      "reauth_successful": "Login updated."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "energia_recuperata_oggi": {
+        "name": "Energy reclaimed today"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Polling interval",
+        "description": "How often Tigo is asked for today's reclaimed energy. The value always refers to the current calendar day: with long intervals it is read only a few times a day.",
+        "data": {
+          "scan_interval_hours": "Interval (hours)"
+        }
+      }
+    }
+  }
+}
