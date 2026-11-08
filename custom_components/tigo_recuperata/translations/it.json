@@ -1,0 +1,56 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Account Tigo",
+        "description": "Credenziali dell'account Tigo (le stesse di ei.tigoenergy.com). Viene letta solo l'energia recuperata di oggi.",
+        "data": {
+          "username": "Email o nome utente",
+          "password": "Password"
+        }
+      },
+      "system": {
+        "title": "Scegli l'impianto",
+        "data": {
+          "system_id": "Impianto"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Accesso Tigo scaduto",
+        "data": {
+          "username": "Email o nome utente",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Email/nome utente o password errati.",
+      "cannot_connect": "Impossibile raggiungere il cloud Tigo. Controlla il log di Home Assistant.",
+      "no_systems": "Nessun impianto trovato su questo account."
+    },
+    "abort": {
+      "already_configured": "Questo impianto è già configurato.",
+      "endpoint_unauthorized": "Il login funziona, ma Tigo rifiuta il dato dell'energia recuperata per questo account.",
+      "cannot_read": "Il login funziona, ma non è stato possibile leggere l'energia recuperata. Controlla il log di Home Assistant.",
+      "reauth_successful": "Accesso aggiornato."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "energia_recuperata_oggi": {
+        "name": "Energia recuperata oggi"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Intervallo di aggiornamento",
+        "description": "Ogni quanto chiedere a Tigo l'energia recuperata di oggi. Il valore si riferisce sempre al giorno di calendario in corso: con intervalli lunghi viene letto solo poche volte al giorno.",
+        "data": {
+          "scan_interval_hours": "Intervallo (ore)"
+        }
+      }
+    }
+  }
+}
